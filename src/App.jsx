@@ -42,7 +42,8 @@ function App() {
               {pokemon.name}
             </button>
 
-              )} }
+              )} 
+              }
             </div>
           </div>
         )}
