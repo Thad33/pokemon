@@ -27,6 +27,48 @@ function App() {
   setOpponentPokemon({
     ...randomOpponent
   })
+
+  setMessage(`You chose ${pokemon.name}! Opponent sent out ${randomOpponent.name}`)
+
+    setIsPlayerTurn(true)
+
+    setAttacklogs("")
+   }
+
+   const resetGame = () => {
+    setPlayerPokemon(null)
+    setOpponentPokemon(null)
+    setMessage("")
+    setIsPlayerTurn(true)
+    setAttacklogs("")
+   }
+
+   const renderLifeBar = (hp, maxHp) => {
+    const widthPercentage = (hp/maxHp) * 100
+
+    return(
+      <div className='life-bar-container'>
+        <div className='life-bar'
+        style={{width: `${widthPercentage}%`}}
+        ></div>
+      </div>
+    )
+   }
+
+   const addLog = (log) => {
+    console.log(log);
+    
+    setAttacklogs((attacklogs) => attacklogs + "<li>" + log + "</li>")
+   }
+
+   const playerAttack = (selectedAttack) => {
+    if(!playerPokemon || !opponentPokemon) {
+      setMessage("Choose your Pokemon to start battle")
+      return
+    }
+
+
+
   return (
     <>
       <div className="nes-container is-rounded is-dark">
