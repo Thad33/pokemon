@@ -90,7 +90,7 @@ function App() {
           </div>
         )}
       </div>
-
+      <div>Pokemon Live effects</div>
     </>
   )
 }
